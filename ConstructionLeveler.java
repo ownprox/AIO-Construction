@@ -375,7 +375,7 @@ public class ConstructionLeveler extends PollingScript<ClientContext>  implement
         if(Random.nextInt(0, 16) == 8)
         {
             CurrentTask = "AntiBan - Stats";
-            ctx.game.tab(Game.Tab.STATS);
+            if(ctx.game.tab() != Game.Tab.STATS) ctx.game.tab(Game.Tab.STATS);
             if(Random.nextInt(0, 2) > 0) ctx.game.tab(Game.Tab.INVENTORY);
         }
     }
