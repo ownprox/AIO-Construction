@@ -18,11 +18,11 @@ public class ConstructionLeveler extends PollingScript<ClientContext>  implement
 {
     //Main Variables
     private enum State { Build, Bank, WalkBank };
-    private int PlanksID = 960, NailsId = 0, CostToBuild = 4, ObjectToBuild = 15439, ObjectToRemove = 6791, BuildFails = 0, BuildIndex = 1;
+    private int PlanksID = 960, NailsId = 4819, CostToBuild = 4, ObjectToBuild = 15439, ObjectToRemove = 6791, BuildFails = 0, BuildIndex = 1;
     private boolean OptiosnOpen = true, BuildModeEnabled = true, Built = false;
     private Tile RemovedAt;
-    GameObject BuildObj;
-    Area Falador = new Area(new Tile(2943, 3363), new Tile(2981, 3392));
+    private GameObject BuildObj;
+    private Area Falador = new Area(new Tile(2943, 3363), new Tile(2981, 3392));
 
     //JSwing
     private JFrame frame = new JFrame("Configurations");
@@ -197,12 +197,12 @@ public class ConstructionLeveler extends PollingScript<ClientContext>  implement
         {
             if(ctx.bank.select().id(new int[]{ItemId}).isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Not enough resources left in bank 1:" + ItemId+ ")", "Lacking Item", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Not enough resources left in bank (1:" + ItemId+ ", "+Amount+")", "Lacking Item", JOptionPane.INFORMATION_MESSAGE);
                 ctx.controller.stop();
                 return;
             } else if(ctx.bank.select().id(new int[]{ItemId}).poll().stackSize() < Amount)
             {
-                JOptionPane.showMessageDialog(null, "Not enough resources left in bank (2:" + ItemId+ ")", "Lacking Item", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Not enough resources left in bank (2:" + ItemId+ ", "+Amount+")", "Lacking Item", JOptionPane.INFORMATION_MESSAGE);
                 ctx.controller.stop();
                 return;
             }
