@@ -119,7 +119,7 @@ public class ConstructionLeveler extends PollingScript<ClientContext>  implement
                             //Fix clicking Yes if the guy starts running when not close to object
                             if(RemovedAt.distanceTo(ctx.players.local().tile()) > 0) Condition.sleep(Random.nextInt(2000, 3900));
 
-                            ctx.input.click(Random.nextInt(249, 269), Random.nextInt(472, 478), true);
+                            ctx.input.click(Random.nextInt(220, 300), Random.nextInt(392, 409), true);
                             BuildFails = 0;
                             Built = false;
                         }
@@ -197,7 +197,7 @@ public class ConstructionLeveler extends PollingScript<ClientContext>  implement
         {
             if(ctx.bank.select().id(new int[]{ItemId}).isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Not enough resources left in bank (1:" + ItemId+ ", "+Amount+")", "Lacking Item", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Not enough resources left in bank (1:" + ItemId+ ", "+Amount+", "+count, "Lacking Item", JOptionPane.INFORMATION_MESSAGE);
                 ctx.controller.stop();
                 return;
             } else if(ctx.bank.select().id(new int[]{ItemId}).poll().stackSize() < Amount)
