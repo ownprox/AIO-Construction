@@ -20,7 +20,6 @@ import java.awt.event.ActionListener;
 @Script.Manifest(name = "Demon Planks", description = "Logs To Planks, 50 con and demon butler needed", properties = "client=4; topic=0;")
 public class DemonPlanks extends PollingScript<ClientContext>  implements PaintListener
 {
-    //ToDo: Fix I Cant Reach That, Fix clicking on portal and going out of my house by mistake
     //Main Variables
     State CurrentState;
     private enum State { UseBitch, Bank, Chatting };
