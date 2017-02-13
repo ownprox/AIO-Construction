@@ -42,10 +42,11 @@ public class DemonPlanks extends PollingScript<ClientContext>  implements PaintL
     @Override
     public void start()
     {
-        while(ctx.equipment.itemAt(Equipment.Slot.MAIN_HAND).id() != 1381)
+        if(ctx.equipment.itemAt(Equipment.Slot.MAIN_HAND).id() != 1381)
         {
             JOptionPane.showMessageDialog(null, "No Staff of air, i suggest you read the instructions before trying this", "Wrong Equipment", JOptionPane.INFORMATION_MESSAGE);
-            Condition.sleep(10000);
+            ctx.controller.stop();
+            return;
         }
         SetPage(CreateConfig());
         startTime = System.currentTimeMillis();
