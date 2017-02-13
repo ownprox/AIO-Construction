@@ -93,7 +93,6 @@ public class DemonPlanks extends PollingScript<ClientContext>  implements PaintL
                     if (!ctx.bank.opened()) ctx.bank.open();
                     else if (ctx.inventory.select().count() != 28) {
                         CheckAndWithdraw(563, 100, 2);
-                        CheckAndWithdraw(555, 100, 2);
                         CheckAndWithdraw(557, 100, 2);
                         CheckAndWithdraw(995, 100000, SelectedLogs.cashneeded()+10000);
                         CheckAndWithdraw(WoodID, 0, 24);
