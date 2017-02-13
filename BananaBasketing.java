@@ -11,7 +11,6 @@ import java.awt.*;
 @Script.Manifest(name = "Banana Basketing", description = "Make cash from making banana baskets", properties = "client=4; topic=0;")
 public class BananaBasketing extends PollingScript<ClientContext>  implements PaintListener
 {
-    //ToDo: Fix I Cant Reach That, Fix clicking on portal and going out of my house by mistake
     //Main Variables
     private enum State { FillBaskets, Bank };
     private int Profit = 0;
